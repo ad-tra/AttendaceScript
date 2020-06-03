@@ -47,6 +47,6 @@ browser = firefox
 ```
 ![config instructions](https://i.imgur.com/ckydL94.jpg)
 ### Built With
-Java and Selenium web automation framework was used to build this project
+Java and Selenium web automation framework were used to build this project
 * [Selenium](https://www.selenium.dev)
 

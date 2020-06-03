@@ -2,14 +2,14 @@
 # AttendaceScript
 
 
-Due to Covid-19 the school required each students to mark his presence by filling a google form. This task is quite reptetive as you have to fill a form with your name, last name, school name, and grade everyday.
+Due to Covid-19 the school required each student to mark his presence by filling a google form. This task is quite reptetive as you have to fill a form with your name, last name, school name, and grade everyday.
 
 the goal:
-* Your time is a valuable asset that souldn't be wasted on tedious tasks like filling forms
+* Your time is a valuable asset that shouldn't be wasted on tedious tasks like filling forms.
 
 
 * You can now automate the whole task just by running the script. 
-* Once configured it will log you win to your google account and **fill the form for you.**  :smile:
+* Once configured it will log you in to your google account and **fill the form for you.**  :smile:
 
 
 

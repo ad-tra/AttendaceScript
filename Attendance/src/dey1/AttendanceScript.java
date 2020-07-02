@@ -16,9 +16,13 @@ public class AttendanceScript {
 
 	public static String password;
 	public static String browser;
+	public static String name;
+	public static String lastName;
 	public static WebDriver driver;
 	public static String email;
 	public static String url;
+	public  String userSchoolName;
+	public static int grade;
 	public static Properties prop;
 	public static File file;
 	public static FileInputStream fileInput;
@@ -69,6 +73,10 @@ public static void getUserInput() {
 		email = prop.getProperty("email");
 		password = prop.getProperty("password");
 		url = prop.getProperty("url");
+		name = prop.getProperty("name");
+		userSchoolName= prop.getProperty("school");	
+		lastName = prop.getProperty("lastname");
+		grade = Integer.parseInt(prop.getProperty("grade"));
 }
 
 /**
@@ -121,9 +129,9 @@ public static void fillNormalElements()
 	//fills the y/n field
 	driver.findElement(By.xpath("//form[@id='mG61Hd']/div/div/div[2]/div/div/div[2]/div/span/div/div/label/div/div/div/div[3]/div")).click();
 	//fills the name field
-	driver.findElement(By.xpath("//form[@id='mG61Hd']/div/div/div[2]/div[2]/div/div[2]/div/div/div/div/input")).sendKeys("Adam");
+	driver.findElement(By.xpath("//form[@id='mG61Hd']/div/div/div[2]/div[2]/div/div[2]/div/div/div/div/input")).sendKeys(name);
 	//fills the last name field
-	driver.findElement(By.xpath("//form[@id='mG61Hd']/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/input")).sendKeys("Trabelsi");	
+	driver.findElement(By.xpath("//form[@id='mG61Hd']/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/input")).sendKeys(lastName);	
 }
 
 
@@ -133,24 +141,20 @@ public static void fillNormalElements()
 public static void fillSchoolName() throws Exception
 {
 	
+	String schoolNames[] = {"adamsville","bradley gardens","crim","hamilton","jfk","milltown","van holten","Eisenhower","hillside","middle school","high school"};
+	
+	int index =0;
+	for(int i = 0; i <schoolNames.length; i++)
+	{
+		if(userSchoolName.compareToIgnoreCase(schoolNames[i])==0)
+		{
+			index = i +3;
+			i=schoolNames.length;
+		}
+	}
+	
 	driver.findElement(By.xpath("//form[@id='mG61Hd']/div/div/div[2]/div[4]/div/div[2]/div/div/div")).click();
-	Thread.sleep(500);
-	
-	String schoolName= prop.getProperty("school_name");
-	int index=0;
-	
-	if(schoolName.compareToIgnoreCase("adamsville") ==0)index=3;
-	if(schoolName.compareToIgnoreCase("bradley gardens") ==0)index=4;
-	if(schoolName.compareToIgnoreCase("crim") ==0)index=5;
-	if(schoolName.compareToIgnoreCase("hamilton") ==0)index=6;
-	if(schoolName.compareToIgnoreCase("jfk") ==0)index=7;
-	if(schoolName.compareToIgnoreCase("milltown") ==0)index=8;
-	if(schoolName.compareToIgnoreCase("van holten") ==0)index=9;		
-	if(schoolName.compareToIgnoreCase("Eisenhower") ==0)index=10;	
-	if(schoolName.compareToIgnoreCase("hillside") ==0)index=11;
-	if(schoolName.compareToIgnoreCase("middle school") ==0)index=12;
-	if(schoolName.compareToIgnoreCase("high school") ==0) index=13;
-		
+	Thread.sleep(500);	
 	driver.findElement(By.xpath("//form[@id='mG61Hd']/div/div/div[2]/div[4]/div/div[2]/div[2]/div[" + index +"]/span")).click();
 	
 	
@@ -164,11 +168,10 @@ public static void fillSchoolName() throws Exception
 public static void fillGrade() throws Exception
 {
 	
-	int index = Integer.valueOf(prop.getProperty("grade")) +4;
-	//Grade drop out
+//Grade drop out
 	driver.findElement(By.xpath("//form[@id='mG61Hd']/div/div/div[2]/div[5]/div/div[2]/div/div[2]")).click();
 	Thread.sleep(500);
-	driver.findElement(By.xpath("//form[@id='mG61Hd']/div/div/div[2]/div[5]/div/div[2]/div[2]/div["+ index +"]")).click();
+	driver.findElement(By.xpath("//form[@id='mG61Hd']/div/div/div[2]/div[5]/div/div[2]/div[2]/div["+ grade +"]")).click();
 	Thread.sleep(500);
 	
 	//final submit

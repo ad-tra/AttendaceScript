@@ -9,7 +9,7 @@ the goal:
 
 
 * You can now automate the whole task just by running the script. 
-* Once configured it will log you in to your google account and **fill the form for you.**  :smile:
+* Once configured it will log you in to your google account and **fill the form for you.** 
 
 
 

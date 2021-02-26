@@ -18,7 +18,7 @@ git clone https://github.com/ad-tra/AttendaceScript.git
 
 <!-- USAGE EXAMPLES -->
 # Usage
-After installing the repo you need to go to the folder and access the **config** file. Open it with a text edeting software 
+After installing the repo you need to go to the folder and access the **config** file. Open it with a text editor
 ![screenshot of the Attendace folder](https://i.imgur.com/mXPUVX2.jpg)
 
  After openning the file you need to change the email and password to match your own credentials.

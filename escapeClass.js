@@ -1,7 +1,7 @@
 escapeClass(15)
 function escapeClass(studentlim){
 // Select the node that will be observed for mutations
-var targetNode = document.querySelector('[jscontroller="FTBAv"]');
+var targetNode = document.querySelector('[jscontroller="SKibOb"]');
 
 // Options for the observer (which mutations to observe)
 var config = { attributes: true, characterData: true, childList: true, subtree: true };
